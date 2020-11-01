@@ -1,22 +1,29 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Header, Icon } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-        <Grid verticalAlign='middle' textAlign='center' container>
-
-          <Grid.Column width={4}>
-            <Image size='small' circular src="/images/meteor-logo.png"/>
-          </Grid.Column>
-
-          <Grid.Column width={8}>
-            <h1>Welcome to this template</h1>
-            <p>Now get to work and modify this app!</p>
-          </Grid.Column>
-
-        </Grid>
+        <div className="landing-background">
+          <Grid container centered stackable columns={3}>
+            <Grid.Column textAlign='center'>
+              <Icon size='massive' name='user' inverted/>
+              <Header as='h1' inverted>Multiple Users</Header>
+              <Header as='h3' inverted>This address book blah blah blah blah blah yada yada yada yada yada</Header>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Icon size='massive' name='facebook f' inverted/>
+              <Header as='h1' inverted>Social Media Support</Header>
+              <Header as='h3' inverted>This address book blah blah blah blah blah yada yada yada yada yada</Header>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Icon size='massive' name='address book outline' inverted/>
+              <Header as='h1' inverted>Book a Appointment</Header>
+              <Header as='h3' inverted>This address book blah blah blah blah blah yada yada yada yada yada</Header>
+            </Grid.Column>
+          </Grid>
+        </div>
     );
   }
 }
