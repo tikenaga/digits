@@ -19,7 +19,7 @@ class ListContacts extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">List Contacts</Header>
-          <Card.Group>{this.props.contacts.map((contacts, index) => <Contact key={index} contact={contacts}/>)}</Card.Group>
+          <Card.Group centered>{this.props.contacts.map((contacts, index) => <Contact key={index} contact={contacts}/>)}</Card.Group>
         </Container>
     );
   }
