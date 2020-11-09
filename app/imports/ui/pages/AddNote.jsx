@@ -4,9 +4,9 @@ import { HiddenField, ErrorsField, SubmitField, TextField, AutoForm } from 'unif
 import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { Note } from '../../api/note/Note';
+import { Notes } from '../../api/note/Notes';
 
-const bridge = new SimpleSchema2Bridge(Note.schema);
+const bridge = new SimpleSchema2Bridge(Notes.schema);
 
 /** Renders the Page for adding a document. */
 class AddNote extends React.Component {
@@ -14,7 +14,7 @@ class AddNote extends React.Component {
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { note, contactId, owner, createdAt } = data;
-    Note.collection.insert({ note, contactId, owner, createdAt },
+    Notes.collection.insert({ note, contactId, owner, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

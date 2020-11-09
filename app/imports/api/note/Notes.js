@@ -24,4 +24,4 @@ class NoteCollection {
   }
 }
 
-export const Note = new NoteCollection();
+export const Notes = new NoteCollection();
