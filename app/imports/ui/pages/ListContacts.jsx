@@ -4,6 +4,7 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Contacts } from '../../api/contacts/Contacts';
+import { Note } from '../../api/note/Note';
 import Contact from '../components/Contact';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -19,7 +20,11 @@ class ListContacts extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">List Contacts</Header>
-          <Card.Group centered>{this.props.contacts.map((contacts, index) => <Contact key={index} contact={contacts}/>)}</Card.Group>
+          <Card.Group centered>{this.props.contacts.map((contacts, index) => <Contact
+              key={index}
+              contact={contacts}
+              notes={this.props.notes.filter(note => (note.contactId === contacts._id))}/>)}
+          </Card.Group>
         </Container>
     );
   }
@@ -28,6 +33,7 @@ class ListContacts extends React.Component {
 /** Require an array of Stuff documents in the props. */
 ListContacts.propTypes = {
   contacts: PropTypes.array.isRequired,
+  notes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -35,8 +41,10 @@ ListContacts.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Contacts.userPublicationName);
+  const subscription2 = Meteor.subscribe(Note.userPublicationName);
   return {
     contacts: Contacts.collection.find({}).fetch(),
-    ready: subscription.ready(),
+    notes: Note.collection.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(ListContacts);
