@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+<img src="doc/landing.png">
 
-You can use the [editor on GitHub](https://github.com/tikenaga/digits/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Digits has the following features
+  * Register accounts
+  * Create and edit contacts
+  * Set notes to your contacts with timestamps
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Installation
+First, [install Meteor](https://www.meteor.com/install).
 
-### Markdown
+Second, get a copy of the digits repository in github.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Third, cd into the app directory and install the required libraries with
+ 
+```
+$ meteor npm install
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Fourth, run the system with 
 
-### Jekyll Themes
+```
+$ meteor npm run start
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tikenaga/digits/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+The app should appear in http://localhost:3000
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Pages
+### Landing Page
+The Landing page describes the features of the application and links to the sign in page
+<img src="doc/landing.png">
+### Sign In Page
+The Sign in Page allows for users to sign in
+<img src="doc/sign-in.png">
+### Add Contact Page
+The Add contacts allows users to add contacts to their list of contacts which are displayed in the List Contact Page
+<img src="doc/add-contact.png">
+### List Contacts Page
+The List Contacts Page lists all the added contacts and already added contacts that the user has. Also the user can add timestamped notes to each contact card.
+<img src="doc/list-contacts.png">
+### Edit Contact Page
+The Edit Contact Page allows the user to edit the information of their contacts
+<img src="doc/edit-contact.png">
