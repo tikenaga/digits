@@ -14,13 +14,13 @@ class Landing extends React.Component {
               <Header as='h3' inverted>Blah blah</Header>
             </Grid.Column>
             <Grid.Column textAlign='center'>
-              <Icon size='large' name='user' inverted/>
-              <Header as='h1' inverted>User Features</Header>
+              <Icon size='large' name='address card' inverted/>
+              <Header as='h1' inverted>Contact Features</Header>
               <Header as='h3' inverted>Blah blah</Header>
             </Grid.Column>
             <Grid.Column textAlign='center'>
-              <Icon size='large' name='user' inverted/>
-              <Header as='h1' inverted>User Features</Header>
+              <Icon size='large' name='calendar alternate outline' inverted/>
+              <Header as='h1' inverted>Timestamp Notes</Header>
               <Header as='h3' inverted>Blah blah</Header>
             </Grid.Column>
 
