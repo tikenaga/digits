@@ -5,7 +5,6 @@ import { Link, withRouter } from 'react-router-dom';
 import Note from './Note';
 import AddNote from '../pages/AddNote';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Contact extends React.Component {
   render() {
     const contactInfo = this.props.contact;
